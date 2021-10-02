@@ -11,7 +11,7 @@ function App() {
         timeRemaining,
         startGame,
         wordCount
-    } = useWordGame()
+    } = useWordGame(5)
 
     return (
         <div>
