@@ -5,6 +5,7 @@ function App() {
     const [text, setText] = useState('')
     const [timeRemaining, setTimeRemaining] = useState(10)
     const [isTimeRunnning, setIsTimeRunning] = useState(false)
+    const [wordCount, setWordCount] = useState(0)
 
     function handleChange(event) {
         const {value} = event.target
@@ -23,6 +24,7 @@ function App() {
             }, 1000)
         } else if (timeRemaining === 0) {
             setIsTimeRunning(false)
+            setWordCount(calculateWordCount(text))
         }
     },[timeRemaining, isTimeRunnning])
 
@@ -35,7 +37,7 @@ function App() {
             />
             <h4>Time remaining: {timeRemaining}</h4>
             <button onClick = {()=> setIsTimeRunning(true)}>Start</button>
-            <h1>Word count: 'n'</h1>
+            <h1>Word count: {wordCount}</h1>
         </div>
     )
 }
