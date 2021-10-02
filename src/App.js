@@ -45,9 +45,10 @@ function App() {
             <textarea 
                 onChange = {handleChange}
                 value = {text}
+                disabled = {!isTimeRunnning}
             />
             <h4>Time remaining: {timeRemaining}</h4>
-            <button onClick = {startGame}>Start</button>
+            <button onClick = {startGame} disabled={isTimeRunnning}>Start</button>
             <h1>Word count: {wordCount}</h1>
         </div>
     )
